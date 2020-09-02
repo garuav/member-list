@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React, { useState, useEffect } from 'react';
+import './App.scss';
+import Member from '../src/components/member/member';
+import {Container, Row} from 'react-bootstrap';
+import Header from '../src/components/header/header';
+import memberData from '../src/common/members.json';
+const App = () => {
+  const [memberDetail, setMemberDetail ]  = useState<any>([]);
+  useEffect(() => {
+    setTimeout(() => {
+      console.log('memberData = ',memberData);
+      if(memberData.ok) {
+        setMemberDetail(memberData.members);
+      }
+      
+    }, 2000);
+    
+  },[])
+  const openModal = (openModal: any) => {
+    console.log('openModal = ',openModal);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+     <Header></Header>
+      <Container >
+        <div className="member">
+        {
+         memberDetail.map((member:any) => <Member key={member.id} memberData = {member} openModal= {() => openModal(member)}></Member>)
+       }
+        </div>
+       
+      
+      </Container>
+      </>
   );
 }
 
