@@ -2,7 +2,7 @@
   "name": "member-details",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://member-details-fullthrottle.herokuapp.com/app/public/",
+  "homepage": "https://member-details-fullthrottle.herokuapp.com/public/",
   "dependencies": {
     "@babel/core": "7.9.0",
     "@svgr/webpack": "4.3.3",
