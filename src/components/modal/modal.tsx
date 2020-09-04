@@ -16,7 +16,7 @@ const modal = (props: any) => {
         console.log('duration = ',duration)
         return {
             id: index + 1,
-            title: `${duration}  + ${duration < 1.00 ? '  (min)' : '  (hrs)'} `,
+            title: `${duration}   ${duration < 1.00 ? '  (min)' : '  (hrs)'} `,
             start:  moment(item.start_time,"MMM D YYYY h:mm A").format('YYYY-MM-DD'),
             end: moment(item.end_time,"MMM D YYYY h:mm A").format('YYYY-MM-DD'),
             allDay: true
