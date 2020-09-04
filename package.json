@@ -73,9 +73,9 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "scripts": {
-    "start": "serve -s build",
-    "devStart": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "serve -s public",
+    "devStart": "node scripts/start.js",
+    "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "heroku-postbuild": "npm install serve --s && npm run build"
   },
