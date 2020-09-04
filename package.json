@@ -2,6 +2,7 @@
   "name": "member-details",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://member-details-fullthrottle.herokuapp.com/app/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -21,7 +22,7 @@
     "typescript": "^3.8"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "react-scripts start",
     "devStart": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
