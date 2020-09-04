@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Modal, Col, Row, Container } from 'react-bootstrap';
 import ActiveHourTimline from '../active-hour-timeline/active-hours-timeline';
 import moment from 'moment';
@@ -35,7 +35,7 @@ const modal = (props: any) => {
           <p style={{fontSize: '.9rem'}}>Below percentage is calculated by assuming max 8 hrs</p>
       </Col>
     {
-        props.modalData.activity_periods.map((item: any) => < ><Col xs= {4} sm={6} className='d-flex align-items-end'> <h6 style={{marginTop: '1rem', marginBottom: '1rem'}}>{moment(item.start_time, 'MMM D YYYY hh:mmA').format('MMM D YYYY')}</h6> </Col> <Col xs= {4} sm={6}> <ActiveHourTimline startDateTime={item.start_time} endDateTime={item.end_time}> </ActiveHourTimline></Col> </>)
+        props.modalData.activity_periods.map((item: any, index: number) => <Fragment key={index}><Col xs= {4} sm={6} className='d-flex align-items-end'> <h6 style={{marginTop: '1rem', marginBottom: '1rem'}}>{moment(item.start_time, 'MMM D YYYY hh:mmA').format('MMM D YYYY')}</h6> </Col> <Col xs= {4} sm={6}> <ActiveHourTimline startDateTime={item.start_time} endDateTime={item.end_time}> </ActiveHourTimline></Col> </Fragment>)
        
     }
      </Row>
