@@ -8,12 +8,9 @@ const   {Calendar, momentLocalizer}  = require('react-big-calendar');
 const localizer = momentLocalizer(moment);
 
 const modal = (props: any) => {
-    console.log('modal props = ', props);
     const myEventsList = props.modalData.activity_periods.map((item: any, index: number) => {
-        console.log('item = ',{...item})
         const ms = moment(item.end_time,"MMM D YYYY h:mmA").diff(moment(item.start_time,"MMM D YYYY h:mm A"));
         const duration =  parseFloat(Math.floor(moment.duration(ms).asHours()) + moment.utc(ms).format(".mm"));
-        console.log('duration = ',duration)
         return {
             id: index + 1,
             title: `${duration}   ${duration < 1.00 ? '  (min)' : '  (hrs)'} `,
@@ -23,7 +20,6 @@ const modal = (props: any) => {
             
         }
     });
-    console.log('myEventsList = ',myEventsList)
     return (
     <>
    <Modal  backdrop="static" show={true} size="lg"  aria-labelledby="contained-modal-title-vcenter"

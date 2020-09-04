@@ -1,8 +1,7 @@
 import React from 'react';
-import { Row, Col, Card } from 'react-bootstrap';
+import {  Card } from 'react-bootstrap';
 import './member.scss';
  const members = (props: any) => {
-     console.log("props = ",props)
     return  (
         // <div className="member">
       

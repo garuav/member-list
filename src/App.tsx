@@ -13,7 +13,6 @@ const App = () => {
   useEffect(() => {
     // fetch('https://drive.google.com/open?id=1xZa3UoXZ3uj2j0Q7653iBp1NrT0gKj0Y').then(reponse => console.log(reponse.json()));
     setTimeout(() => {
-      console.log('memberData = ',memberData);
       if(memberData.ok) {
         setMemberDetail(memberData.members);
       }
@@ -22,7 +21,6 @@ const App = () => {
     
   },[])
   const openModal = useCallback((openModal: any) => {
-    console.log('openModal = ',openModal);
     const props = {
       show: true , modalData: {...openModal}, calenderView: false
     }
