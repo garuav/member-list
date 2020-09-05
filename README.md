@@ -13,6 +13,16 @@ Used SCSS for styling
 
 Deployed in heroku and attached CICD pipline to sync  with heroku server with updated code
 
+### For Running this project in local 
+
+Clone the Project 
+
+Open the directory in VS code or any other directory 
+
+Do npm i or sudo npm i for mac to install dependencies 
+
+Use npm devStart to run the project
+
 ### `npm devStart`
 
 Runs the app in the development mode.<br />
