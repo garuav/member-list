@@ -3,9 +3,8 @@ import {  Card } from 'react-bootstrap';
 import './member.scss';
  const members = (props: any) => {
     return  (
-        // <div className="member">
       
-    <div className="member-wrapper" onClick={props.openModal}>
+    <div className="member-wrapper ml-3 mr-3" onClick={props.openModal}>
           <Card style={{ width: '100%' }}>
   <Card.Body>
     <Card.Title>{props.memberData.real_name}</Card.Title>
@@ -13,7 +12,6 @@ import './member.scss';
     
   </Card.Body>
 </Card></div>
-//   </div>
     )
 
 }

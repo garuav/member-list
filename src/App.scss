@@ -1,12 +1,3 @@
 @import '~bootstrap/scss/bootstrap.scss';
 @import 'react-big-calendar/lib/sass/styles';
-.container {
-  height: calc(100% - 100px);
-  .member{
-    height: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    padding: 2rem;
-  }
-}
+
