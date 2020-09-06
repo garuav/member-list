@@ -3,8 +3,8 @@ import Member from '../member/member';
 import {Container} from 'react-bootstrap';
 import Header from '../header/header';
 import { modalDataDetails } from '../../common/common.constant';
-import memberData from '../../common/members.json';
-import Modal from '../modal/modal'
+import Modal from '../modal/modal';
+import {getMemberDetails} from '../../common/common.service';
 import './home.scss'
 
 const Home = () => {
@@ -12,13 +12,15 @@ const Home = () => {
     const [modalData, setmodalData]  = useState<any>({...modalDataDetails});
   
     useEffect(() => {
-      // fetch('https://drive.google.com/open?id=1xZa3UoXZ3uj2j0Q7653iBp1NrT0gKj0Y').then(reponse => console.log(reponse.json()));
-      setTimeout(() => {
-        if(memberData.ok) {
-          setMemberDetail(memberData.members);
-        }
         
-      }, 2000);
+      getMemberDetails().then(response => {
+          if(response.status) {
+            setMemberDetail(response.data || []);
+          }
+      }).catch(error => {
+        setMemberDetail( []);
+      })
+     
       
     },[])
     const openModal = useCallback((openModal: any) => {
